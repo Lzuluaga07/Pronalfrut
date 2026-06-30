@@ -1,0 +1,40 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Hero from '../../components/Hero.astro';
+import VideoHero from '../../components/VideoHero.astro';
+import Nosotros from '../../components/Nosotros.astro';
+import Productos from '../../components/Productos.astro';
+import TextBlock from '../../components/TextBlock.astro';
+import TestimonialCarousel from '../../components/TestimonialCarousel.astro';
+import Contacto from '../../components/Contacto.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<MainLayout title="Alimentos Pronalfrut - Home">
+    <Navbar />
+    <main>
+        <Hero />
+        <div class="mt-4">
+            <VideoHero />
+        </div>
+        <Nosotros />
+        <Productos />
+        <TextBlock 
+            title="Commitment to quality" 
+            paragraph="Pronalfrut is dedicated to processing and marketing fruit pulp, frozen fruit, and other derivatives, with timely and complete delivery of excellent quality products at competitive prices, guaranteeing customer satisfaction. To achieve this, we have a qualified team that seeks the continuous improvement of our processes, profitability, liquidity of operations, and complete customer satisfaction." 
+        />
+       <TestimonialCarousel 
+    title="Our Clients" 
+    message="Coming soon you will know the opinions of the companies that trust us." 
+/>
+        <Contacto />
+    </main>
+    <Footer />
+</MainLayout>
+
+
+
+
+
+

@@ -1,0 +1,143 @@
+---
+import traducciones from '../data/idiomas.json';
+
+const esIngles = Astro.url.pathname.startsWith('/en');
+const idioma = esIngles ? 'en' : 'es';
+
+const t = traducciones[idioma].navbar;
+---
+
+<header class="bg-white shadow-md sticky top-0 z-50 w-full">
+  <div class="container mx-auto px-6 py-4 flex justify-between items-center w-full">
+    
+    <!-- Logo de la Empresa -->
+    <div class="flex items-center flex-shrink-0">
+      <a href={esIngles ? "/en" : "/"}>
+        <img src="/test-logo.png" alt="Logo Pronalfrut" class="h-40 md:h-40 w-auto" />
+      </a>
+    </div>
+
+    <!-- Menú Escritorio -->
+    <div class="hidden md:flex items-center space-x-6 lg:space-x-8 font-medium text-gray-700">
+      <a href={esIngles ? "/en" : "/"} class="hover:text-green-600 transition-colors">{t.inicio}</a>
+      <a href={esIngles ? "/en" : "/"} class="hover:text-green-600 transition-colors">{t.nosotros}</a>
+      <a href={esIngles ? "/en" : "/"} class="hover:text-green-600 transition-colors">{t.productos}</a>
+      <a href="/blog" class="hover:text-green-600 transition-colors">{t.blog}</a>
+      <a href={esIngles ? "/en" : "/"} class="hover:text-green-600 transition-colors">{t.contacto}</a>
+    
+      <span class="text-gray-300">|</span>
+
+      <!-- Ubicación -->
+      <div class="flex items-center space-x-1 text-sm text-gray-500">
+        <span class="material-symbols-outlined text-orange-500 text-lg">location_on</span>
+        <span>Bogotá, Colombia</span>
+      </div>
+
+      <span class="text-gray-300">|</span>
+
+      <!-- Selector de Idiomas Desplegable -->
+      <div class="relative group cursor-pointer py-2">
+        <div class="flex items-center space-x-2 text-sm font-semibold text-gray-700 hover:text-green-600">
+          {esIngles ? (
+            <img src="https://flagcdn.com/w40/us.png" alt="USA Flag" class="w-5 h-5 rounded-full object-cover shadow-sm" />
+            <span>English</span>
+          ) : (
+            <img src="https://flagcdn.com/w40/co.png" alt="Colombia Flag" class="w-5 h-5 rounded-full object-cover shadow-sm" />
+            <span>Español</span>
+          )}
+          <svg class="h-4 w-4 fill-current transition-transform group-hover:rotate-180" viewBox="0 0 20 20">
+            <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/>
+          </svg>
+        </div>
+        
+        <div class="absolute right-0 mt-2 w-40 bg-white border border-gray-100 rounded-md shadow-lg hidden group-hover:block z-50">
+          <div class="py-1">
+          <a href="#" id="btn-es" class="flex items-center space-x-3 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+   <img src="https://flagcdn.com/w40/co.png" alt="Colombia" class="w-5 h-5 rounded-full">
+   <span>Español</span>
+ </a>
+ <a href="#" id="btn-en" class="flex items-center space-x-3 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+   <img src="https://flagcdn.com/w40/us.png" alt="USA" class="w-5 h-5 rounded-full">
+   <span>English</span>
+ </a>  
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Botón Menú Hamburguesa -->
+    <button id="menu-toggle" class="md:hidden text-gray-700 focus:outline-none focus:text-green-600">
+      <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+        <path id="hamburger-icon" class="block" fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Menú Desplegable Móvil -->
+  <div id="mobile-menu" class="hidden bg-white border-t border-gray-100 px-6 py-4 space-y-3 font-medium text-gray-700 shadow-inner w-full">
+    <a href={esIngles ? "/en" : "/"} class="block hover:text-green-600 transition-colors">{t.inicio}</a>
+    <a href={esIngles ? "/en" : "/"} class="block hover:text-green-600 transition-colors">{t.nosotros}</a>
+    <a href={esIngles ? "/en" : "/"} class="block hover:text-green-600 transition-colors">{t.productos}</a>
+    <a href={esIngles ? "/en" : "/"} class="block hover:text-green-600 transition-colors">{t.contacto}</a>
+    <a href="/blog" class="block hover:text-green-600 transition-colors">{t.blog}</a>
+    
+    <div class="border-t border-gray-200 my-2 pt-2 space-y-2">
+      <p class="text-xs text-gray-400 font-bold uppercase tracking-wider">Idioma / Language</p>
+     <a href="#" id="btn-es-movil" class="flex items-center space-x-3 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+   <img src="https://flagcdn.com/w40/co.png" alt="Colombia" class="w-5 h-5 rounded-full">
+   <span>Español</span>
+ </a>
+ <a href="#" id="btn-en-movil" class="flex items-center space-x-3 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+   <img src="https://flagcdn.com/w40/us.png" alt="USA" class="w-5 h-5 rounded-full">
+   <span>English</span>
+ </a>  
+    </div>
+  </div>
+</header>
+
+<script is:inline>
+  // 1. Bloqueo de scroll automático (Evita saltos al recargar)
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+
+  // 2. Lógica del Menú Hamburguesa
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  }
+
+  // 3. Lógica de Idioma con guardado de scroll
+  function cambiarIdioma(idioma) {
+    const path = window.location.pathname;
+    const nuevaRuta = idioma === 'en' 
+      ? '/en' + path.replace('/en', '') 
+      : path.replace('/en', '');
+    
+    // Guardamos la posición exacta en píxeles antes de recargar
+    localStorage.setItem('scrollPos', window.scrollY);
+    window.location.href = nuevaRuta + window.location.hash;
+  }
+
+  // 4. Restauración al cargar
+  window.addEventListener('load', () => {
+    const pos = localStorage.getItem('scrollPos');
+    if (pos) {
+      window.scrollTo(0, parseInt(pos));
+      localStorage.removeItem('scrollPos');
+    }
+    
+    // Asignar eventos a botones
+    ['btn-es', 'btn-en', 'btn-es-movil', 'btn-en-movil'].forEach(id => {
+      document.getElementById(id)?.addEventListener('click', (e) => {
+        e.preventDefault();
+        cambiarIdioma(id.includes('en') ? 'en' : 'es');
+      });
+    });
+  });
+</script>
+
+

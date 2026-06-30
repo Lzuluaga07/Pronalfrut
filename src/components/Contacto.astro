@@ -1,0 +1,53 @@
+---
+import traducciones from '../data/idiomas.json';
+import TituloSeccion from './TituloSeccion.astro';
+
+const esIngles = Astro.url.pathname.startsWith('/en');
+const idioma = esIngles ? 'en' : 'es';
+
+const t = traducciones[idioma].contacto;
+---
+
+<section id="contacto" class="py-16 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-4">
+    <TituloSeccion texto={t.titulo} />
+    </h2>
+
+     <!-- Dirección -->
+    <div class="flex items-center gap-4">
+        <span class="material-symbols-outlined text-emerald-600 text-3xl"></span>
+        <p class="text-lg text-gray-700">Cra. 64A #4b-41, Bogotá D.C.</p>
+    </div>
+
+    <!-- Teléfono -->
+    <div class="flex items-center gap-4">
+        <span class="material-symbols-outlined text-emerald-600 text-3xl">call</span>
+        <p class="text-lg text-gray-700">+57 (601) 420-27-30 (PBX)</p>
+    </div>
+
+    <!-- Correo -->
+    <div class="flex items-center gap-4">
+        <span class="material-symbols-outlined text-emerald-600 text-3xl">email</span>
+        <p class="text-lg text-gray-700">sales@pronalfrut.com</p>
+    
+
+    
+     <!-- Mapa -->
+class="w-full h-[500px] rounded-xl overflow-hidden shadow-lg mb-6"
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15907.321632758774!2d-74.13116528335796!3d4.624327925915589!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f99545f1fa85f%3A0x90eac8ae72c6e03f!2zQ3JhLiA2NGEgIyA0Qi00MSwgUHVlbnRlIEFyYW5kYSwgQm9nb3TDoSwgRC5DLiwgQm9nb3TDoSwgQm9nb3TDoSwgRC5DLg!5e0!3m2!1ses!2sco!4v1782849533171!5m2!1ses!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>  
+</div>     
+      
+      
+   
+   
+
+
+
+            
+
+
+
+
+
+
+
