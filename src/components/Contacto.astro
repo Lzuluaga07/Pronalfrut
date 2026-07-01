@@ -13,31 +13,43 @@ const t = traducciones[idioma].contacto;
     <TituloSeccion texto={t.titulo} />
     </h2>
 
-     <!-- Dirección -->
-    <div class="flex items-center gap-4">
-        <span class="material-symbols-outlined text-emerald-600 text-3xl"></span>
-        <p class="text-lg text-gray-700">Cra. 64A #4b-41, Bogotá D.C.</p>
+<!-- Contenedor horizontal -->
+<div class="flex flex-col md:flex-row justify-between items-center gap-8 mb-16">
+  
+  <!-- Dirección -->
+  <div class="flex flex-col items-center gap-2">
+    <div class="w-16 h-16 bg-purple-700 rounded-full flex items-center justify-center text-4xl text-white">📍</div>
+    <p class="text-sm font-semibold text-gray-700">Cra. 64A #4b-41, Bogotá D.C.</p>
+  </div>
+
+  <!-- Ejemplo del Teléfono -->
+<a href="tel:+576014202730" class="flex flex-col items-center gap-2">
+  <div class="w-16 h-16 bg-purple-700 rounded-full flex items-center justify-center text-4xl text-white">📞</div>
+  <p class="text-sm font-semibold text-gray-700">+57 (601) 420-27-30 (PBX)</p>
+</a>
+
+  <!-- Email (ENLACE DE CORREO) -->
+  <a href="mailto:sales@pronalfrut.com" class="flex flex-col items-center gap-2 hover:opacity-80 transition-opacity">
+    <div class="w-16 h-16 bg-purple-700 rounded-full flex items-center justify-center text-4xl text-white">✉️</div>
+    <p class="text-sm font-semibold text-gray-700">sales@pronalfrut.com</p>
+  </a>
+
+</div>
+
+
+  <!-- Mapa a ancho total -->
+    <div class="w-full h-[400px] mt-16 shadow-xl border-t border-gray-200">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15907.321632758774!2d-74.13116528335796!3d4.624327925915589!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f99545f1fa85f%3A0x90eac8ae72c6e03f!2zQ3JhLiA2NGEgIyA0Qi00MSwgUHVlbnRlIEFyYW5kYSwgQm9nb3TDoSwgRC5DLiwgQm9nb3TDoSwgQm9nb3TDoSwgRC5DLg!5e0!3m2!1ses!2sco!4v1782916111828!5m2!1ses!2sco" 
+        width="100%" 
+        height="100%" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="strict-origin-when-cross-origin">
+      </iframe>
     </div>
 
-    <!-- Teléfono -->
-    <div class="flex items-center gap-4">
-        <span class="material-symbols-outlined text-emerald-600 text-3xl">call</span>
-        <p class="text-lg text-gray-700">+57 (601) 420-27-30 (PBX)</p>
-    </div>
-
-    <!-- Correo -->
-    <div class="flex items-center gap-4">
-        <span class="material-symbols-outlined text-emerald-600 text-3xl">email</span>
-        <p class="text-lg text-gray-700">sales@pronalfrut.com</p>
-    
-
-    
-     <!-- Mapa -->
-class="w-full h-[500px] rounded-xl overflow-hidden shadow-lg mb-6"
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15907.321632758774!2d-74.13116528335796!3d4.624327925915589!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f99545f1fa85f%3A0x90eac8ae72c6e03f!2zQ3JhLiA2NGEgIyA0Qi00MSwgUHVlbnRlIEFyYW5kYSwgQm9nb3TDoSwgRC5DLiwgQm9nb3TDoSwgQm9nb3TDoSwgRC5DLg!5e0!3m2!1ses!2sco!4v1782849533171!5m2!1ses!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>  
-</div>     
-      
-      
    
    
 
