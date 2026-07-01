@@ -1,0 +1,15 @@
+<script>
+  const banner = document.getElementById('cookie-banner');
+  const button = document.getElementById('accept-cookies');
+
+  // Si no se ha aceptado, mostramos el banner
+  if (banner && !localStorage.getItem('cookiesAccepted')) {
+    banner.classList.remove('hidden');
+  }
+
+  // Agregamos el listener solo si el botón existe
+  button?.addEventListener('click', () => {
+    localStorage.setItem('cookiesAccepted', 'true');
+    banner?.classList.add('hidden');
+  });
+</script>
