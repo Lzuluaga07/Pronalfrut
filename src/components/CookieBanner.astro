@@ -1,3 +1,12 @@
+<div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-gray-900 text-white p-4 z-[9999] flex flex-col md:flex-row justify-between items-center shadow-lg hidden">
+  <p class="text-sm mb-3 md:mb-0 md:mr-4">
+    Utilizamos cookies para mejorar tu experiencia en Pronalfrut.
+  </p>
+  <button id="accept-cookies" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-6 rounded transition-colors">
+    Aceptar
+  </button>
+</div>
+
 <script>
   const banner = document.getElementById('cookie-banner');
   const button = document.getElementById('accept-cookies');
@@ -7,7 +16,7 @@
     banner.classList.remove('hidden');
   }
 
-  // Agregamos el listener solo si el botón existe
+  // Agregamos el listener para ocultarlo
   button?.addEventListener('click', () => {
     localStorage.setItem('cookiesAccepted', 'true');
     banner?.classList.add('hidden');
