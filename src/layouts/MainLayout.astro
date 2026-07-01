@@ -1,5 +1,6 @@
 ---
-import '../styles/global.css'; // <--- Importamos el CSS global aquí
+import '../styles/global.css'; 
+import CookieBanner from '../components/CookieBanner.astro';
 const { title = "Alimentos Pronalfrut" } = Astro.props;
 ---
 <!DOCTYPE html>
@@ -12,6 +13,7 @@ const { title = "Alimentos Pronalfrut" } = Astro.props;
 <body>
   <slot />
   <!-- ... tu botón de WhatsApp ... -->
+  <CookieBanner />
 </body>
 </html>
 
