@@ -1,24 +1,28 @@
-<div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-gray-900 text-white p-4 z-[9999] flex flex-col md:flex-row justify-between items-center shadow-lg hidden">
-  <p class="text-sm mb-3 md:mb-0 md:mr-4">
-    Utilizamos cookies para mejorar tu experiencia en Pronalfrut.
-  </p>
-  <button id="accept-cookies" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-6 rounded transition-colors">
-    Aceptar
-  </button>
+<!-- Ventana centralizada (Modal) -->
+<div id="cookie-banner" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[9999] hidden">
+  <div class="bg-white p-6 rounded-lg shadow-xl max-w-sm w-full text-center">
+    <h2 class="text-xl font-bold mb-4 text-gray-800">Política de Cookies</h2>
+    <p class="text-gray-600 mb-6 text-sm">
+      Utilizamos cookies para mejorar tu experiencia en Alimentos Pronalfrut. ¿Estás de acuerdo?
+    </p>
+    <button id="accept-cookies" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded transition-colors">
+      Aceptar y continuar
+    </button>
+  </div>
 </div>
 
 <script>
   const banner = document.getElementById('cookie-banner');
   const button = document.getElementById('accept-cookies');
 
-  // Si no se ha aceptado, mostramos el banner
-  if (banner && !localStorage.getItem('cookiesAccepted')) {
+  // SIEMPRE mostramos el banner al cargar la página
+  if (banner) {
     banner.classList.remove('hidden');
   }
 
-  // Agregamos el listener para ocultarlo
+  // Al hacer clic, solo lo ocultamos (sin guardar en localStorage)
   button?.addEventListener('click', () => {
-    localStorage.setItem('cookiesAccepted', 'true');
     banner?.classList.add('hidden');
   });
 </script>
+
