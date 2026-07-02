@@ -15,14 +15,19 @@
   const banner = document.getElementById('cookie-banner');
   const button = document.getElementById('accept-cookies');
 
-  // SIEMPRE mostramos el banner al cargar la página
-  if (banner) {
-    banner.classList.remove('hidden');
+ // Verificamos si el usuario ya aceptó antes
+  if (sessionStorage.getItem('cookies_accepted') === 'true') {
+    banner?.classList.add('hidden');
+  } else {
+    // Si no ha aceptado, lo mostramos
+    banner?.classList.remove('hidden');
   }
 
-  // Al hacer clic, solo lo ocultamos (sin guardar en localStorage)
+  // Al hacer clic, guardamos la aceptación en sessionStorage
   button?.addEventListener('click', () => {
+    sessionStorage.setItem('cookies_accepted', 'true');
     banner?.classList.add('hidden');
-  });
+  }); 
 </script>
+
 
