@@ -12,25 +12,26 @@ export default function ProductCard({ producto }) {
     const claveNombre = producto.nombre.toLowerCase();
 
     return (
-        <div className="bg-orange-50 border border-orange-100 rounded-2xl shadow-sm hover:shadow-md transition-all p-5 flex flex-col h-full">
-            {/* Imagen del Producto */}
-            <div className="relative h-64 w-full overflow-hidden rounded-t-xl mb-4">
+        // Aplicamos rounded-[30px] y sombra más orgánica
+        <div className="bg-white border-none rounded-[30px] shadow-lg shadow-orange-100/50 hover:shadow-2xl transition-all p-6 flex flex-col h-full">
+            
+            {/* Imagen del Producto con aspect-[4/3] para estandarizar */}
+            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[20px] mb-4 bg-gray-50 cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
                 <img
                     src={producto.imagen}
                     alt={producto.nombre}
-                    className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                    className="h-full w-full object-contain transition-transform duration-500 hover:scale-105"    
                 />
                 <div className="absolute top-3 right-3 bg-white/90 p-2 rounded-full shadow-md text-xl">
-                   {claveNombre === 'naranja' ? '🍊' : '❄️'}
+                    {claveNombre === 'naranja' ? '🍊' : '❄️'}
                 </div>
             </div>
-   <h3 className="text-xl font-bold text-gray-800 mb-1">
-  {t.nombres && t.nombres[producto.nombre.toLowerCase()] 
-    ? t.nombres[producto.nombre.toLowerCase()] 
-    : producto.nombre}
-</h3>
 
-            
+            <h3 className="text-xl font-semibold text-gray-800 mb-1">
+                {t.nombres && t.nombres[producto.nombre.toLowerCase()] 
+                    ? t.nombres[producto.nombre.toLowerCase()] 
+                    : producto.nombre}
+            </h3>
             
             <p className="text-gray-500 text-sm mb-4">Alimentos Pronalfrut</p>
 
