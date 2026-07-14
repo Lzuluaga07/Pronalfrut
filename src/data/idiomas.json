@@ -7,9 +7,14 @@
       "blog": "Blog",
       "contacto": "Contacto"
     },
-    "hero": {
-      "title": "Alimentos Pronalfrut",
-      "subtitle": "30 años de experiencia..."
+   "hero": {
+  "title": "Alimentos Pronalfrut",
+  "subtitle": "30 años de experiencia",
+  "experiencia": "30 años de experiencia",
+  "titular": "GARANTIZAN CALIDAD",
+  "bienvenida": "Bienvenido a Pronalfrut",
+"btnproductos" : "Ver Productos",
+"btncontacto" : "Contáctanos"
     },
     "nosotros": {
       "titulo": "Nuestra Empresa",
@@ -63,7 +68,8 @@
     },
     "hero": {
       "title": "Alimentos Pronalfrut",
-      "subtitle": "30 years of experience..."
+      "subtitle": "30 years of experience...",
+      "bienvenida": "Welcome to Pronalfrut..."
     },
     "nosotros": {
       "titulo": "About Us",
