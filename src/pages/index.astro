@@ -47,12 +47,29 @@ const t = traducciones[idioma];
     message="Próximamente conocerás las opiniones de las empresas que confían en nosotros." 
 /><!-- Mora Flotante Superior Derecha -->
 <div class="fixed top-40 right-8 z-[200] pointer-events-none">
-    <img 
+    <img
+        id="mora-mascota"
         src="/images/mora-feliz.png"
-        alt="Mora feliz" 
-        class="w-20 h-20 md:w-28 md:h-28 object-contain drop-shadow-xl mora-animada" 
+        alt="Mora feliz"
+        class="w-20 h-20 md:w-28 md:h-28 object-contain drop-shadow-xl"
     />
 </div>
+<script is:inline>
+  (function () {
+    var mora = document.getElementById('mora-mascota');
+    if (!mora) return;
+    /* Pre-carga la imagen de ojos cerrados para evitar flickering */
+    var imgCerrada = new Image();
+    imgCerrada.src = '/images/mora-cerrada.png';
+    function parpadear() {
+      mora.src = '/images/mora-cerrada.png'; /* cerrar ojos */
+      setTimeout(function () {
+        mora.src = '/images/mora-feliz.png'; /* abrir ojos */
+      }, 125); /* ojos cerrados exactamente 125 ms */
+    }
+    setInterval(parpadear, 3500); /* parpadeo cada 3.5 segundos */
+  })();
+</script>
 <Contacto />
     </main>
     <Footer />
