@@ -26,9 +26,18 @@ const t = traducciones[idioma];
     <main>
       <Hero /> 
             <VideoHero />
-        <Nosotros />
-        <Productos />
-
+            <Nosotros />
+        <div class="w-full">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="block w-full">
+           <path fill="#FFFDF5" d="M0,160L80,170.7C160,181,320,203,480,202.7C640,203,800,181,960,160C1120,139,1280,117,1360,106.7L1440,96L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path>
+       </svg>
+  </div>
+            <Productos />
+<!-- Contenedor que hace de puente -->
+<div class="bg-[#FFD700] w-full">
+    <div class="w-full h-8
+     bg-white" style="border-radius: 100% 100% 0 0 / 100% 100% 0 0;"></div>
+</div>
        <TextBlock
     title={t.nosotros.politicaTitulo}
     paragraph={t.nosotros.politicaTexto}
@@ -36,11 +45,24 @@ const t = traducciones[idioma];
 <TestimonialCarousel 
     title={t.footer.navClientes} 
     message="Próximamente conocerás las opiniones de las empresas que confían en nosotros." 
-/>
+/><!-- Mora Flotante Superior Derecha -->
+<div class="fixed top-40 right-8 z-[200] pointer-events-none">
+    <img 
+        src="/images/mora-feliz.png"
+        alt="Mora feliz" 
+        class="w-20 h-20 md:w-28 md:h-28 object-contain drop-shadow-xl mora-animada" 
+    />
+</div>
 <Contacto />
     </main>
     <Footer />
 </MainLayout>
+
+
+
+
+
+
 
 
 

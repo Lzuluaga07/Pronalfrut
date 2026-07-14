@@ -2,3 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.mora-animada {
+  animation: parpadeo 2.5s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes parpadeo {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(0.95); }
+}
+
