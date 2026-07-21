@@ -17,15 +17,16 @@ const t = traducciones[idioma].navbar;
       </a>
     </div>
 
-    <!-- Menú Escritorio -->
-    <div class="hidden md:flex items-center space-x-6 lg:space-x-8 font-medium text-gray-700">
-      <a href={esIngles ? "/en" : "/"} class="hover:text-green-600 transition-colors">{t.inicio}</a>
-      <a href={esIngles ? "/en" : "/"} class="hover:text-green-600 transition-colors">{t.nosotros}</a>
-      <a href={esIngles ? "/en" : "/"} class="hover:text-green-600 transition-colors">{t.productos}</a>
-      <a href="/blog" class="hover:text-green-600 transition-colors">{t.blog}</a>
-      <a href={esIngles ? "/en" : "/"} class="hover:text-green-600 transition-colors">{t.contacto}</a>
-    
-      <span class="text-gray-300">|</span>
+    <!-- Menú Escritorio Actualizado -->
+<div class="hidden md:flex items-center space-x-6 lg:space-x-8 font-medium text-gray-700">
+  <a href={esIngles ? "/en" : "/"} class="hover:text-green-600 transition-colors">{t.inicio}</a>
+  <a href={esIngles ? "/en/#nosotros" : "/#nosotros"} class="hover:text-green-600 transition-colors">{t.nosotros}</a>
+  <a href={esIngles ? "/en/#productos" : "/#productos"} class="hover:text-green-600 transition-colors">{t.productos}</a>
+  <a href="/blog" class="hover:text-green-600 transition-colors">{t.blog}</a>
+  <a href={esIngles ? "/en/#contacto" : "/#contacto"} class="hover:text-green-600 transition-colors">{t.contacto}</a>
+  
+  <span class="text-gray-300">|</span>
+  <!-- Resto de elementos de ubicación e idioma... -->
 
       <!-- Ubicación -->
       <div class="flex items-center space-x-1 text-sm text-gray-500">
@@ -77,11 +78,11 @@ const t = traducciones[idioma].navbar;
   <!-- Menú Desplegable Móvil -->
   <div id="mobile-menu" class="hidden bg-white border-t border-gray-100 px-6 py-4 space-y-3 font-medium text-gray-700 shadow-inner w-full">
     <a href={esIngles ? "/en" : "/"} class="block hover:text-green-600 transition-colors">{t.inicio}</a>
-    <a href={esIngles ? "/en" : "/"} class="block hover:text-green-600 transition-colors">{t.nosotros}</a>
-    <a href={esIngles ? "/en" : "/"} class="block hover:text-green-600 transition-colors">{t.productos}</a>
-    <a href={esIngles ? "/en" : "/"} class="block hover:text-green-600 transition-colors">{t.contacto}</a>
+    <a href={esIngles ? "/en/#nosotros" : "/#nosotros"} class="block hover:text-green-600 transition-colors">{t.nosotros}</a>
+    <a href={esIngles ? "/en/#productos" : "/#productos"} class="block hover:text-green-600 transition-colors">{t.productos}</a>
+    <a href={esIngles ? "/en/#contacto" : "/#contacto"} class="block hover:text-green-600 transition-colors">{t.contacto}</a>
     <a href="/blog" class="block hover:text-green-600 transition-colors">{t.blog}</a>
-    
+  
     <div class="border-t border-gray-200 my-2 pt-2 space-y-2">
       <p class="text-xs text-gray-400 font-bold uppercase tracking-wider">Idioma / Language</p>
      <a href="#" id="btn-es-movil" class="flex items-center space-x-3 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">

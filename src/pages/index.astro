@@ -45,35 +45,59 @@ const t = traducciones[idioma];
 <TestimonialCarousel 
     title={t.footer.navClientes} 
     message="Próximamente conocerás las opiniones de las empresas que confían en nosotros." 
-/><!-- Mora Flotante Superior Derecha -->
-<div class="fixed top-40 right-8 z-[200] pointer-events-none">
-    <img
-        id="mora-mascota"
-        src="/images/mora-feliz.png"
-        alt="Mora feliz"
-        class="w-20 h-20 md:w-28 md:h-28 object-contain drop-shadow-xl"
-    />
+/>
+<div id="contenedor-mora" class="fixed top-32 right-8 z-[200]">
+  <img 
+    id="mora-mascota"
+    src="/images/mora-feliz.png"
+    alt="Mora feliz"
+    class="w-20 h-20 md:w-28 md:h-28 object-contain drop-shadow-xl"
+  />
 </div>
+
+
 <script is:inline>
-  (function () {
-    var mora = document.getElementById('mora-mascota');
-    if (!mora) return;
-    /* Pre-carga la imagen de ojos cerrados para evitar flickering */
+  (function() {
+    var moraImg = document.getElementById('mora-mascota');
+    var moraContainer = document.getElementById('contenedor-mora');
+    if (!moraImg || !moraContainer) return;
+
+    // 1. Precarga de la imagen de ojos cerrados para el parpadeo
     var imgCerrada = new Image();
     imgCerrada.src = '/images/mora-cerrada.png';
-    function parpadear() {
-      mora.src = '/images/mora-cerrada.png'; /* cerrar ojos */
-      setTimeout(function () {
-        mora.src = '/images/mora-feliz.png'; /* abrir ojos */
-      }, 125); /* ojos cerrados exactamente 125 ms */
-    }
-    setInterval(parpadear, 3500); /* parpadeo cada 3.5 segundos */
+
+    // 2. Función de parpadeo cada 3.5 segundos
+    setInterval(function() {
+      moraImg.src = '/images/mora-cerrada.png';
+      setTimeout(function() {
+        moraImg.src = '/images/mora-feliz.png';
+      }, 125);
+    }, 3500);
+
+    // 3. Movimiento controlado con el scroll sin perder el elemento
+    window.addEventListener('scroll', function() {
+      var scrollPos = window.scrollY;
+      
+      // Controla cuánto baja la mora respecto al scroll (ajusta 0.15 si quieres que baje más o menos)
+      var desplazamiento = scrollPos * 0.15;
+      
+      // Ponemos un límite máximo (ej. 400 píxeles) para que baje acompañando el scroll 
+      // pero se detenga antes de salirse de la vista
+      if (desplazamiento > 400) {
+        desplazamiento = 400;
+      }
+
+      // Mueve el contenedor suavemente hacia abajo usando transform (sin romper el fixed)
+      moraContainer.style.transform = 'translateY(' + desplazamiento + 'px)';
+    });
   })();
 </script>
 <Contacto />
     </main>
     <Footer />
 </MainLayout>
+
+
 
 
 
